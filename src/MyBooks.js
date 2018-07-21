@@ -32,6 +32,29 @@ class MyBooks extends  Component {
                                     )}
                                 </ol>
                             </div>
+
+                            <h2 className="bookshelf-title">Want To Read</h2>
+                            <div className="bookshelf-books">
+                                <ol className="books-grid">
+                                    {books.map((books) =>
+                                        <List  key={books.id} books={books}>
+
+                                        </List>
+                                    )}
+                                </ol>
+                            </div>
+
+                            <h2 className="bookshelf-title">Read</h2>
+                            <div className="bookshelf-books">
+                                <ol className="books-grid">
+                                    {books.map((books) =>
+                                        <List  key={books.id} books={books}>
+
+                                        </List>
+                                    )}
+                                </ol>
+                            </div>
+
                         </div>
                     </div>
                 </div>
