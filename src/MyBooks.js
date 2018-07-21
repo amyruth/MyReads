@@ -5,7 +5,9 @@ class MyBooks extends  Component {
     render () {
         return (
             <div>
-                This is the main page!
+                <div className="list-books-title">
+                    <h1>MyReads</h1>
+                </div>
                 <div className="open-search">
                     <Link to="/search">Add books</Link>
                 </div>
