@@ -11,6 +11,8 @@ class BooksApp extends Component {
         books: []
     };
 
+    /* Fetching books from the api */
+
     componentDidMount() {
         this.getMyBooks();
     }
@@ -28,7 +30,7 @@ class BooksApp extends Component {
         return (
             <div>
                 <Route exact path = "/" render = {() => (
-                    <MyBooks/>
+                    <MyBooks books={this.state.books}/>
                 )}
                 />
 

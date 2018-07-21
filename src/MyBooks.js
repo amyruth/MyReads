@@ -1,9 +1,19 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import List from "./List"
+import PropTypes from "prop-types";
 
 class MyBooks extends  Component {
+
+    static propTypes = {
+        books: PropTypes.array.isRequired
+    };
+
     render () {
+        console.log("This is my props",this.props);
+
+        const { books } = this.props;
+
         return (
             <div>
                 <div className="list-books-title">
@@ -15,9 +25,11 @@ class MyBooks extends  Component {
                             <h2 className="bookshelf-title">Currently Reading</h2>
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
-                                    <List>
+                                    {books.map((books) =>
+                                        <List  key={books.id} books={books}>
 
-                                    </List>
+                                        </List>
+                                    )}
                                 </ol>
                             </div>
                         </div>
