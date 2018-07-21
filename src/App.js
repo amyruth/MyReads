@@ -8,14 +8,14 @@ import MyBooks from "./MyBooks";
 class BooksApp extends Component {
 
     state = {
-        books: []
+        books: [],
     };
 
     /* Fetching books from the api */
 
     componentDidMount() {
         this.getMyBooks();
-    }
+    };
 
     getMyBooks() {
         BooksAPI.getAll().then((books) => {
@@ -23,7 +23,7 @@ class BooksApp extends Component {
             console.log("My Books are", this.state.books)
         });
 
-    }
+    };
 
     render() {
 
