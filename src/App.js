@@ -1,24 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
-import { Route } from "react-router-dom"
+import { Route} from "react-router-dom"
+import SearchPage from "./SearchPage"
+import MyBooks from "./MyBooks";
 
-class BooksApp extends React.Component {
+class BooksApp extends Component {
 
     render() {
         return (
             <div>
                 <Route exact path = "/" render = {() => (
-                    <div>
-                        This is the main page!
-                    </div>
+                    <MyBooks/>
                 )}
                 />
 
                 <Route exact path = "/Search" render = {() => (
-                    <div>
-                        This is the search page!!
-                    </div>
+                    <SearchPage/>
                 )}
 
                 />
