@@ -12,17 +12,20 @@ class SearchPage extends Component {
     };
 
     state = {
-        query: [],
         fetchedBooks: []
     };
 
     fetchBooks = (event) => {
         const query = event.target.value.trim();
-        this.setState({ query });
 
         if (query) {
             BooksAPI.search(query).then((books) => {
-                (books instanceof Array) ? this.setState({fetchedBooks: books}) : this.setState({fetchedBooks: []})
+                books.map((book) => {
+                    this.props.books.map((pbook) => {
+                        (pbook.id === book.id ? book.shelf = pbook.shelf : "none");
+                    })
+                }); //cant think of any other way to apply the cerrect shelf value to each book besides checing id.
+                (books instanceof Array) ? this.setState({fetchedBooks: books}) : this.setState({fetchedBooks: []});
             });
             console.log("Query: ", query);
             console.log("Books fetched", this.state.fetchedBooks);
