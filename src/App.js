@@ -30,7 +30,7 @@ class BooksApp extends Component {
     moveBookToShelf = (book, shelf) => {
         BooksAPI.update(book, shelf).then(() => {
             book.shelf = shelf;
-            this.setState(this.state);
+            this.getMyBooks();
             console.log(`Book ${book.title} has been moved to ${shelf} shelf`);
         })
     };
