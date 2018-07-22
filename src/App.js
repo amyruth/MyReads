@@ -8,7 +8,7 @@ import MyBooks from "./MyBooks";
 class BooksApp extends Component {
 
     state = {
-        books: [],
+        books: []
     };
 
     /* Fetching books from the api */
@@ -30,6 +30,7 @@ class BooksApp extends Component {
     moveBookToShelf = (book, shelf) => {
         BooksAPI.update(book, shelf).then(() => {
             book.shelf = shelf;
+            this.setState(this.state);
             console.log(`Book ${book.title} has been moved to ${shelf} shelf`);
         })
     };
