@@ -32,6 +32,7 @@ class SearchPage extends Component {
         }
     };
 
+
     render () {
 
         const { moveBookToShelf } = this.props;
