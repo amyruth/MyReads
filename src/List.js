@@ -19,7 +19,7 @@ class List extends Component {
                             <img src={books.imageLinks.thumbnail} alt={`book cover of ${books.title}`}/>
                         </div>
                         <div className="book-shelf-changer">
-                            <select>
+                            <select value={books.shelf ? books.shelf : "none"}>
                                 <option value="move" disabled>Move to...</option>
                                 <option value="currentlyReading">Currently Reading</option>
                                 <option value="wantToRead">Want to Read</option>
