@@ -6,12 +6,13 @@ import PropTypes from "prop-types";
 class MyBooks extends  Component {
 
     static propTypes = {
-        books: PropTypes.array.isRequired
+        books: PropTypes.array.isRequired,
+        moveBookToShelf: PropTypes.func.isRequired
     };
 
     render () {
 
-        const { books } = this.props;
+        const { books, moveBookToShelf} = this.props;
 
         return (
             <div>
@@ -25,7 +26,7 @@ class MyBooks extends  Component {
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
                                     {books.filter((books) => books.shelf === "currentlyReading").map((books) =>
-                                        <List  key={books.id} books={books}>
+                                        <List  key={books.id} books={books} moveBookToShelf={moveBookToShelf}>
 
                                         </List>
                                     )}
@@ -36,7 +37,7 @@ class MyBooks extends  Component {
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
                                     {books.filter((books) => books.shelf === "wantToRead").map((books) =>
-                                        <List  key={books.id} books={books}>
+                                        <List  key={books.id} books={books} moveBookToShelf={moveBookToShelf}>
 
                                         </List>
                                     )}
@@ -47,7 +48,7 @@ class MyBooks extends  Component {
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
                                     {books.filter((books) => books.shelf === "read").map((books) =>
-                                        <List  key={books.id} books={books}>
+                                        <List  key={books.id} books={books} moveBookToShelf={moveBookToShelf}>
 
                                         </List>
                                     )}
