@@ -25,16 +25,13 @@ class BooksApp extends Component {
 
     };
 
-    /* Fetching books from the api */
+    /* Moving a book to a shelf */
 
     moveBookToShelf = (book, shelf) => {
-        BooksAPI.update(book, shelf).then(() => {
-            book.shelf = shelf;
-            this.getMyBooks();
+        BooksAPI.update(book, shelf).then(() => this.getMyBooks());
             console.log(`Book ${book.title} has been moved to ${shelf} shelf`);
-        })
     };
-
+    
     render() {
 
         return (

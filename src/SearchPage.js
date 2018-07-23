@@ -15,6 +15,8 @@ class SearchPage extends Component {
         fetchedBooks: []
     };
 
+    /* Searching for books */
+
     fetchBooks = (event) => {
         const query = event.target.value.trim();
 
@@ -31,7 +33,6 @@ class SearchPage extends Component {
             console.log("Books fetched", this.state.fetchedBooks);
         }
     };
-
 
     render () {
 
